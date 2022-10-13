@@ -84,6 +84,7 @@ process(clock, reset)
 		elsif load = '0' and prev_load = '1' then
 			--prev_load <= '1';
 			ended <= '0';
+			-- Temporary state. Doesn't really do anything but required to add a delay.
 
 		elsif load = '0' and prev_load = '0' and prev_load1 = '1' and computing = '0' then
 			computing <= '1';
@@ -94,10 +95,12 @@ process(clock, reset)
 		elsif computing = '1' then
 			if oiterator < noofclauses then
 				if iiterator < number_literals then
+					-- Store Positive Literals
 					if bit_vec(2*oiterator)(iiterator) = '1' and bit_vec(2*oiterator + 1)(iiterator) = '0' then
 						temp_formula.clauses(oiterator).lits(row_iterator).num <= iiterator + 1;
 						temp_formula.clauses(oiterator).lits(row_iterator).val <= '1';
 						row_iterator <= row_iterator + 1;
+					-- Store Negative Literals
 					elsif bit_vec(2*oiterator)(iiterator) = '0' and bit_vec(2*oiterator + 1)(iiterator) = '1' then
 						temp_formula.clauses(oiterator).lits(row_iterator).num <= iiterator + 1;
 						temp_formula.clauses(oiterator).lits(row_iterator).val <= '0';
