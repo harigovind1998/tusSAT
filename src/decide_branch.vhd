@@ -39,7 +39,7 @@ entity decide_branch is
            lit_out : out  lit);
 end decide_branch;
 
-architecture Behavioral of decide_branch is
+architecture RTL of decide_branch is
 signal formula_s : formula := ZERO_FORMULA;
 signal lit_s : lit := ZERO_LIT;
 signal iterator : INTEGER := 0;
@@ -83,5 +83,5 @@ process(clock, reset)
 	end if;
 
 end process;	
-end Behavioral;
+end RTL;
 

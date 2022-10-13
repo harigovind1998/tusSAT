@@ -39,7 +39,7 @@ entity read_store is
            ended: out STD_LOGIC);
 end read_store;
 
-architecture Behavioral of read_store is
+architecture RTL of read_store is
 signal temp_formula : formula := ZERO_FORMULA;
 type mem_type is array ((2*number_clauses - 1) downto 0) of STD_LOGIC_VECTOR((number_literals-1) downto 0);
 signal bit_vec : mem_type := (others => (others => '0'));
@@ -84,7 +84,7 @@ process(clock, reset)
 		elsif load = '0' and prev_load = '1' then
 			--prev_load <= '1';
 			ended <= '0';
-			-- Temporary state. Doesn't really do anything but required to add a delay.
+			-- Temporary state. Doesn't really do anything but required to add a delay (hypothsis).
 
 		elsif load = '0' and prev_load = '0' and prev_load1 = '1' and computing = '0' then
 			computing <= '1';
@@ -129,4 +129,4 @@ process(clock, reset)
 		end if;
 	end if;
 end process;		
-end Behavioral;
+end RTL;

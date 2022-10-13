@@ -40,7 +40,7 @@ entity controller is
            model : out  STD_LOGIC_VECTOR((number_literals-1) downto 0));
 end controller;
 
-architecture Behavioral of controller is
+architecture RTL of controller is
 
 --Defining components in Architecture
 
@@ -544,5 +544,5 @@ elsif rising_edge(clock) then
 end if;
 end process;
 
-end Behavioral;
+end RTL;
 

@@ -40,7 +40,7 @@ entity Pure_Literal is
            lit_found : out lit);
 end Pure_Literal;
 
-architecture Behavioral of Pure_Literal is
+architecture RTL of Pure_Literal is
 
 signal s_in_formula : formula := ZERO_FORMULA;
 signal s_ended :  STD_LOGIC := '0';
@@ -126,4 +126,4 @@ elsif rising_edge(clock) then
 	end if;
 end if;
 end process;
-end Behavioral;
+end RTL;

@@ -43,7 +43,7 @@ entity Propagate_Literal is
            out_formula : out  formula);
 end Propagate_Literal;
 
-architecture Behavioral of Propagate_Literal is
+architecture RTL of Propagate_Literal is
 
 signal s_in_formula : formula := ZERO_FORMULA;
 signal s_in_lit : lit := ZERO_LIT;
@@ -194,5 +194,5 @@ end if;
 end process;
 
 
-end Behavioral;
+end RTL;
 

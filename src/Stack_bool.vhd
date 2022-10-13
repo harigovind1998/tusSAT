@@ -44,7 +44,7 @@ entity Stack_bool is
 		 empty : out  STD_LOGIC);
 end Stack_bool;
 
-architecture Behavioral of Stack_bool is
+architecture RTL of Stack_bool is
 --DATA VARIABLES
 type  mem_type is array (bool_stack_size - 1 downto 0) of STD_LOGIC;
 signal data : mem_type := (others => '0');
@@ -108,5 +108,5 @@ begin
 				
 		end if;
 	end process ;
-end Behavioral;
+end RTL;
 

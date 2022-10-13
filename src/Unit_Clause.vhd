@@ -41,7 +41,7 @@ entity Unit_Clause is
            lit_found : out  lit);
 end Unit_Clause;
 
-architecture Behavioral of Unit_Clause is
+architecture RTL of Unit_Clause is
 
 signal s_in_formula : formula := ZERO_FORMULA;
 signal s_ended : STD_LOGIC := '0';
@@ -98,5 +98,5 @@ end if;
 
 end process ;
 
-end Behavioral;
+end RTL;
 

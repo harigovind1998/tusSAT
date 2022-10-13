@@ -43,7 +43,7 @@ entity Stack_integer is
          empty : out  STD_LOGIC);
 end Stack_integer;
 
-architecture Behavioral of Stack_integer is
+architecture RTL of Stack_integer is
 --DATA VARIABLES
 type  mem_type is array (lit_stack_size-1 downto 0) of lit;
 signal data : mem_type := (others => zero_lit);
@@ -106,5 +106,5 @@ begin
         
     end if;
   end process ;
-end Behavioral;
+end RTL;
 

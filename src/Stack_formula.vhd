@@ -44,7 +44,7 @@ entity Stack_formula is
          empty : out  STD_LOGIC);
 end Stack_formula;
 
-architecture Behavioral of Stack_formula is
+architecture RTL of Stack_formula is
 --DATA VARIABLES
 type  mem_type is array (formula_stack_size-1 downto 0) of formula;
 signal data : mem_type := (others => zero_formula);
@@ -106,5 +106,5 @@ begin
         
     end if;
   end process ;
-end Behavioral;
+end RTL;
 

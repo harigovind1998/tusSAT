@@ -44,7 +44,7 @@ entity DB_Kernel is
            out_lit: out  lit);
 end DB_Kernel;
 
-architecture Behavioral of DB_Kernel is
+architecture RTL of DB_Kernel is
 
 component Unit_Clause is
     Port ( clock : in  STD_LOGIC;
@@ -296,5 +296,5 @@ elsif rising_edge(clock) then
 end if;
 end process;
 
-end Behavioral;
+end RTL;
 
