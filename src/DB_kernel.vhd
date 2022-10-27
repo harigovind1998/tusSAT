@@ -35,9 +35,9 @@ entity DB_Kernel is
     Port ( clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            find : in  STD_LOGIC;
-           in_formula : in  formula;
+--           in_formula : in  formula;
            ended : out  STD_LOGIC;
-           out_formula : out  formula;
+--           out_formula : out  formula;
            sat : out  STD_LOGIC;
            unsat : out  STD_LOGIC;
            propagating : out  STD_LOGIC;
@@ -78,6 +78,10 @@ component Pure_Literal is
            found : out  STD_LOGIC;
            lit_found : out  lit);
 end component;
+
+-- input "in_formula" was being passed in an [64][1000] pin, vastly overshooting the number of io pins available
+signal in_formula : formula := ZERO_FORMULA;
+signal out_formula : formula := ZERO_FORMULA;
 
 signal s_in_formula : formula := ZERO_FORMULA;
 signal s_out_formula : formula := ZERO_FORMULA;

@@ -22,9 +22,7 @@ package Common is
 --
 
  constant NUMBER_CLAUSES : INTEGER := 1000;
--- constant NUMBER_CLAUSES : INTEGER := 100;
  constant NUMBER_LITERALS : INTEGER := 64;
--- constant NUMBER_LITERALS : INTEGER := 10;
  constant LIT_RANGE_ST : INTEGER := 0;
  constant LIT_RANGE_END : INTEGER := NUMBER_LITERALS;
  constant BOOL_STACK_SIZE : INTEGER := NUMBER_LITERALS;
